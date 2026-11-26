@@ -41,8 +41,6 @@ function App() {
     <Route path="/dashboard" element={<Dashboard/>}></Route>
     <Route path="/settings" element={<Settings/>}></Route>
     <Route path="/register" element={<Register/>}></Route>
-
-
    </Routes>
    </BrowserRouter>
  
