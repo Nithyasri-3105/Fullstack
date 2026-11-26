@@ -14,8 +14,8 @@ import Team from "./pages/team";
 
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  //const [email, setEmail] = useState("");
+  //const [password, setPassword] = useState("");
 
   function print() {
     console.log("Printing inside print function");
