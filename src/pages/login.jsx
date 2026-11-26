@@ -13,11 +13,7 @@ function Login() {
     console.log(email, password);
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
-    console.log(email, password);
-  };
+  const handleSubmit = (e) => {e.preventDefault();console.log("Form submitted");console.log(email, password);};
 
   return (
      
@@ -39,9 +35,7 @@ function Login() {
 
         <button type="submit">Submit</button>
 
-        <button type="button" onClick={print}>
-          nSubmit
-        </button>
+        <button type="button" onClick={print}>nSubmit</button>
       </form>
     </div>
     
