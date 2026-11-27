@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 
 
 
@@ -8,29 +7,39 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   //const [email, setEmail] = useState("");
   //const [password, setPassword] = useState("");
-    const[formdata,setFormdata]=useState({
+  const location=useLocation();
+    const[logindata,setLogindata]=useState({
       username:'',
       password:''
     })
     const navigate=useNavigate();
 
+
   function print() {
     console.log("Printing inside print function");
-    console.log(formdata);
+    console.log(logindata);
   }
   function handlechange(e){
-    setFormdata({
-      ...formdata,
+    setLogindata({
+      ...logindata,
       [e.target.name]:e.target.value
     });
   }
 
   const handleSubmit = (e) => {e.preventDefault();
-     console.log("Login success",formdata);
-    alert("Login Successful")
+    const registerdata=location.state;
+    if(logindata.username===registerdata.name && logindata.password===registerdata.password){
+    
+    console.log("Login success");
     navigate("/dashboard",{
-      state:formdata
+      state:logindata
     })
+    }else{
+      console.log("if not success");
+    }
+    console.log("Login data",logindata);
+    console.log("Register data",registerdata);
+     
    
   };
     
@@ -45,12 +54,12 @@ function Login() {
        {/*<input type="text" id="username" placeholder="Enter your name"/>
         <br />*/}
 
-        <input type="name" id="username" placeholder="Enter your name" name="username"
+        <input type="name" id="username" placeholder="Enter your name" name="username"  
           onChange={handlechange}
           required/>
         <br />
 
-        <input type="password" required id="password" placeholder="Enter your password" name="password"
+        <input type="password" required id="password" placeholder="Enter your password" name="password" 
           onChange={handlechange}/>
         <br />
 

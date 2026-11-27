@@ -6,14 +6,18 @@ import {zodResolver} from "@hookform/resolvers/zod"
 
 
 
-function Register () {const navigate=useNavigate();
+function Register () 
+{
+    const navigate=useNavigate();
     const{register,handleSubmit,formState:{errors}}=useForm({resolver: zodResolver(registerschema)
     })
 
     function onSubmit1(data){
         console.log(data);
         alert("successfull");
-        navigate("/login");
+        navigate("/login",{
+            state:data
+        });
     }
     return ( 
         <>
@@ -25,7 +29,7 @@ function Register () {const navigate=useNavigate();
         <input type="email"  placeholder="Enter your email" {...register("email")}/>
         <p>{errors.email?.message}</p>
         <br />
-        <input type="password"  placeholder="Enter your password" {...register("password")}/>
+        <input type="password"  placeholder="Enter your password"   {...register("password")}/>
         <p>{errors.password?.message}</p>
           <input type="age"  placeholder="Enter your age" {...register("age")}/>
         <p>{errors.age?.message}</p>

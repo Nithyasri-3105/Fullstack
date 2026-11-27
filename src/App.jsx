@@ -10,6 +10,9 @@ import Clients from "./pages/clients";
 import Calendar from "./pages/calendar";
 import Team from "./pages/team";
 import Register from "./pages/register";
+import Admin from "./pages/Admin/adminlayout";
+import Adminsettings from "./pages/Admin/settings";
+import Userdetails from "./pages/Admin/userdetails";
 
 
 
@@ -41,6 +44,13 @@ function App() {
     <Route path="/dashboard" element={<Dashboard/>}></Route>
     <Route path="/settings" element={<Settings/>}></Route>
     <Route path="/register" element={<Register/>}></Route>
+    <Route path="/admin" element={<Admin/>}>
+       <Route path="dashboard" element={<Dashboard/>}></Route>
+       <Route path="adminsettings" element={<Adminsettings/>}></Route>
+       <Route path="userdetails" element={<Userdetails/>}></Route>
+
+
+    </Route>
    </Routes>
    </BrowserRouter>
  
