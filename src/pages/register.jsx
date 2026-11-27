@@ -25,8 +25,8 @@ function Register ()
             
         <form onSubmit={handleSubmit(onSubmit1)}
             className="bg-white p-8 rounded-lg shadow-lg w-96">
-  <h1 className="text-3xl font-bold text-600 text-center mb-6">
-                    Register
+                <h1 className="text-3xl font-bold text-600 text-center mb-6">
+                    register
                 </h1>
         <label htmlFor="name" className="text-lg font-semibold">Name :</label>
         <input type="text"  placeholder="Enter your name" id="name" className="w-full border p-2 rounded mb-2" {...register("name")}/>
