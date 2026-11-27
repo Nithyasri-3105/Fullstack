@@ -47,27 +47,33 @@ function Login() {
    
   return (
      
-    <div>
-      <div className="text-cyan-500">HI!</div>
-
-      <form onSubmit={handleSubmit}>
+   
+      
+<div className="flex justify-center min-h-screen items-center bg-gray-100">
+  
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-96">
        {/*<input type="text" id="username" placeholder="Enter your name"/>
         <br />*/}
-
-        <input type="name" id="username" placeholder="Enter your name" name="username"  
+          <h1 className="text-3xl font-bold text-600 text-center mb-6">
+                    Login
+                </h1>
+<label htmlFor="name" className="text-lg font-semibold">Name :</label>
+        <input type="name" id="name" placeholder="Enter your name" className="w-full border p-2 rounded mb-2" name="username"  
           onChange={handlechange}
           required/>
         <br />
-
-        <input type="password" required id="password" placeholder="Enter your password" name="password" 
+<label htmlFor="password" className="text-lg font-semibold">Password :</label>
+        <input type="password" required id="password" placeholder="Enter your password" className="w-full border p-2 rounded mb-2" name="password" 
           onChange={handlechange}/>
         <br />
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="w-full bg-pink-600 text-white text-lg font-semibold p-2 rounded hover:bg-pink-700">Submit</button>
 
-        <button type="button" onClick={print}>nSubmit</button>
+        {/*<button type="button" onClick={print}>nSubmit</button>*/}
       </form>
     </div>
+   
+  
     
   );
 }

@@ -21,23 +21,42 @@ function Register ()
     }
     return ( 
         <>
-        <form onSubmit={handleSubmit(onSubmit1)}>
-
-        <input type="name"  placeholder="Enter your name" {...register("name")}/>
+        <div className="flex justify-center min-h-screen items-center bg-gray-300">
+            
+        <form onSubmit={handleSubmit(onSubmit1)}
+            className="bg-white p-8 rounded-lg shadow-lg w-96">
+  <h1 className="text-3xl font-bold text-600 text-center mb-6">
+                    Register
+                </h1>
+        <label htmlFor="name" className="text-lg font-semibold">Name :</label>
+        <input type="text"  placeholder="Enter your name" id="name" className="w-full border p-2 rounded mb-2" {...register("name")}/>
+        <p className="text-red-500 text-sm"></p>
         <p>{errors.name?.message}</p>
         <br />
-        <input type="email"  placeholder="Enter your email" {...register("email")}/>
+
+<label htmlFor="email" className="text-lg font-semibold">Email :</label>
+        <input type="email"  placeholder="Enter your email" id="email" className="w-full border p-2 rounded mb-2" {...register("email")}/>
+        <p className="text-red-500 text-sm"></p>
         <p>{errors.email?.message}</p>
         <br />
-        <input type="password"  placeholder="Enter your password"   {...register("password")}/>
+
+
+<label htmlFor="password" className="text-lg font-semibold">Password :</label>
+        <input type="password"  placeholder="Enter your password" id="password" className="w-full border p-2 rounded mb-2" {...register("password")}/>
+        <p className="text-red-500 text-sm"></p>
         <p>{errors.password?.message}</p>
-          <input type="age"  placeholder="Enter your age" {...register("age")}/>
+        <br/>
+
+
+<label htmlFor="age" className="text-lg font-semibold">Age :</label>
+          <input type="number"  placeholder="Enter your age" id="age" className="w-full border p-2 rounded mb-2" {...register("age")}/>
+          <p className="text-red-500 text-sm"></p>
         <p>{errors.age?.message}</p>
         <br />
-<button type="submit">Submit</button>
+<button type="submit" className="w-full bg-pink-600 text-white text-lg font-semibold p-2 rounded hover:bg-pink-700">Submit</button>
         
         </form>
-
+</div>
         </>
      );
 }
