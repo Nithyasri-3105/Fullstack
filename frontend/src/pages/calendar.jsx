@@ -1,7 +1,7 @@
 function Calendar(){
     return(
         <div>
-            <p>Calendar </p>
+            <p>Calendar of the month </p>
         </div>
     );
 }
